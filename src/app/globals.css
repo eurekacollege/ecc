@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -14,14 +14,26 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-}
+} */
 
-body {
+/* body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+} */
+
+:root {
+  --primary-color: #11121a;
+  --hover-color: #272832;
+  --accent-color: #0071ff;
+  --text-color: #c9c9c9;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 * {
@@ -30,13 +42,10 @@ body {
   margin: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
 
-@media (prefers-color-scheme: dark) {
+
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-}
+} */
