@@ -25,7 +25,8 @@ body {
 } */
 
 :root {
-  --primary-color: #11121a;
+  --primary-color: #247F23;
+  --secondary-color: #FFBD59;
   --hover-color: #272832;
   --accent-color: #0071ff;
   --text-color: #c9c9c9;
@@ -34,12 +35,13 @@ body {
 body {
   min-height: 100vh;
   min-height: 100dvh;
+  padding: 0;
+  margin: 0;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+
 }
 
 

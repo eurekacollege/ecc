@@ -1,29 +1,134 @@
-"use client"
+// "use client"
+// import { useState } from "react";
+// import Image from "next/image";
+// import styles from "./Navbar.module.css";
+
+// export default function Navbar () {
+//     const [ active, setActive ] = useState(false);
+
+//     function openHamburger() {
+//         setActive((prev) => !prev);
+
+//         console.log(styles.active)
+//     }
+//     return (
+//         <nav className={styles.navbar}>
+//             <div className={styles.brand_title}>
+//                 <Image src="/images/eureka_logo.svg" width={150} height={150} alt="company logo"/>
+//             </div>
+
+//             <a href="#" className={`${active ? styles.open : ""} ${styles.toggle_button}`} onClick={openHamburger}>
+//                 <span className={styles.bar}></span>
+//                 <span className={styles.bar}></span>
+//                 <span className={styles.bar}></span>
+//             </a>
+
+//             <div className={`${ active ? styles.active : "" } ${styles.nav_links}`}>
+//                 <ul>
+//                     <li><a href="">About</a></li>
+//                     <li><a href="">Programs</a></li>
+//                     <li><a href="">Policies</a></li>
+//                     <li><a href="">News & Events</a></li>
+//                     <li><a href="">Contact</a></li>
+//                 </ul>
+//             </div>
+
+//         </nav>
+//     )
+// }
+
+"use client";
 import { useState } from "react";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
 
-export default function Navbar () {
-    const [ show, setShow ] = useState(false);
-    function openSideBar() {
-        setShow((prev) => !prev);
+export default function Navbar() {
+  const [active, setActive] = useState(false);
+  const [openSub, setOpenSub] = useState(null); // "about" | "programs" | "policies" | "contact" | null
+
+  const isMobile = () =>
+    typeof window !== "undefined" &&
+    window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+  function openHamburger(e) {
+    e.preventDefault();
+    setActive((prev) => !prev);
+  }
+
+  function onParentClick(e, key) {
+    // Mobile: first tap opens submenu, second tap follows the link
+    if (isMobile()) {
+      if (openSub !== key) {
+        e.preventDefault();
+        setOpenSub(key);
+      } else {
+        setOpenSub(null); // optional: close if tapped again
+      }
     }
-    return (
-        <>
-            <button onClick={openSideBar}>
-                <svg id={styles.openSidebarButton} className={show ? styles.show : ""} xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#c9c9c9"><path d="M165.13-254.62q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.86q7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.87q-7.22 7.12-17.9 7.12H165.13Zm0-200.25q-10.68 0-17.9-7.27-7.23-7.26-7.23-17.99 0-10.74 7.23-17.87 7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.27 7.23 7.26 7.23 17.99 0 10.74-7.23 17.87-7.22 7.13-17.9 7.13H165.13Zm0-200.26q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.87q7.22-7.12 17.9-7.12h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.86q-7.22 7.13-17.9 7.13H165.13Z"/></svg>
-            </button>
-            <nav className={styles.navbar}>
-                <ul>
-                    <li><Image className={styles.logo} src="/globe.svg" alt="logo" width={100} height={100}/></li>
-                    <li><button><svg id={styles.closeSidebarButton} xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#c9c9c9"><path d="m480-444.62-209.69 209.7q-7.23 7.23-17.5 7.42-10.27.19-17.89-7.42-7.61-7.62-7.61-17.7 0-10.07 7.61-17.69L444.62-480l-209.7-209.69q-7.23-7.23-7.42-17.5-.19-10.27 7.42-17.89 7.62-7.61 17.7-7.61 10.07 0 17.69 7.61L480-515.38l209.69-209.7q7.23-7.23 17.5-7.42 10.27-.19 17.89 7.42 7.61 7.62 7.61 17.7 0 10.07-7.61 17.69L515.38-480l209.7 209.69q7.23 7.23 7.42 17.5.19 10.27-7.42 17.89-7.62 7.61-17.7 7.61-10.07 0-17.69-7.61L480-444.62Z"/></svg></button></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/program">Program</a></li>
-                    <li><a href="/policies">Policies</a></li>
-                    <li><a href="/news&events">News & Events</a></li>
-                    <li><a href="contact">Contact</a></li>
-                </ul>
-            </nav>
-        </>
-    )
+  }
+
+  return (
+    <nav className={styles.navbar}>
+      <div className={styles.brand_title}>
+        <Image src="/images/eureka_logo.svg" width={150} height={150} alt="company logo" />
+      </div>
+
+      <a
+        href="#"
+        className={`${styles.toggle_button} ${active ? styles.open : ""}`}
+        onClick={openHamburger}
+      >
+        <span className={styles.bar}></span>
+        <span className={styles.bar}></span>
+        <span className={styles.bar}></span>
+      </a>
+
+      <div className={`${styles.nav_links} ${active ? styles.active : ""}`}>
+        <ul>
+          {/* ABOUT */}
+          <li className={`${styles.menu_item} ${openSub === "about" ? styles.subopen : ""}`}>
+            <a href="/about" onClick={(e) => onParentClick(e, "about")}>About</a>
+            <div className={styles.popover}>
+              <a href="/about/mission">Mission & Vision</a>
+              <a href="/about/founder">Founder</a>
+              <a href="/about/campus">Campus</a>
+            </div>
+          </li>
+
+          {/* PROGRAMS */}
+          <li className={`${styles.menu_item} ${openSub === "programs" ? styles.subopen : ""}`}>
+            <a href="/programs" onClick={(e) => onParentClick(e, "programs")}>Programs</a>
+            <div className={styles.popover}>
+              <a href="/programs/moa">MOA Program</a>
+              <a href="/programs/celban">CELBAN Review</a>
+              <a href="/programs/csw">CSW Program</a>
+            </div>
+          </li>
+
+          {/* POLICIES */}
+          <li className={`${styles.menu_item} ${openSub === "policies" ? styles.subopen : ""}`}>
+            <a href="/policies" onClick={(e) => onParentClick(e, "policies")}>Policies</a>
+            <div className={styles.popover}>
+              <a href="/policies/refund">Refund Policy</a>
+              <a href="/policies/privacy">Privacy Policy</a>
+              <a href="/policies/handbook">Student Handbook</a>
+            </div>
+          </li>
+
+          {/* NEWS (no submenu) */}
+          <li><a href="/news">News & Events</a></li>
+
+          {/* CONTACT */}
+          <li className={`${styles.menu_item} ${openSub === "contact" ? styles.subopen : ""}`}>
+            <a href="/contact" onClick={(e) => onParentClick(e, "contact")}>Contact</a>
+            <div className={styles.popover}>
+              <a href="/contact/admissions">Admissions</a>
+              <a href="/contact/location">Location & Hours</a>
+              <a href="/contact/faq">FAQ</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
 }
