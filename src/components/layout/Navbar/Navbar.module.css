@@ -5,9 +5,10 @@
     align-items: center;
     background-color: var(--secondary-color);
     color: white;
-    gap: 30px;
-
-    padding: 0;
+    /* gap: 100px; */
+    width: 100%;
+    /* padding: 0; */
+    gap: clamp(16px, 4vw, 48px);
 }
 
 .brand_title {
@@ -15,6 +16,9 @@
     /* margin: .5rem; */
     /* color: green; */
     line-height: 0;
+    /* min-width: 100px; */
+    /* width: 300px; */
+
 }
 
 .brand_title img {
@@ -36,33 +40,33 @@
     
 }
 
-.nav_links li a {
+.nav_links li > a {
     text-decoration: none;
     color: var(--primary-color);
     padding: 1rem;
     display: block;
     font-weight: 600;
-    font-size: 3rem;
+    font-size: var(--paragraph-1);
     
 }
 
-.nav_links li:hover {
-    background-color: #555;
-}
+/* .nav_links li:hover {
+    background-color: white;
+} */
 
 .toggle_button {
     position: absolute;
     top: 2.5rem;
-    right: 1rem;
+    right: 2.5rem;
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 50px;
+    width: 40px;
     height: 40px;
 }
 
 .toggle_button .bar {
-    height: 5px;
+    height: 4px;
     width: 100%;
     background-color: var(--primary-color);
     border-radius: 10px;
@@ -97,7 +101,7 @@
   min-width: 220px;
 
   /* background: var(--secondary-color ); */
-  background: white;
+  background: var(--secondary-color);
   /* border-radius: 14px; */
   padding: 10px;
 
@@ -116,12 +120,11 @@
 }
 
 .popover a {
-  padding: 10px 12px;
-  text-align: center;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #1f2937;
-  font-size: .5em;
+    padding: 10px 12px;
+    text-align: left;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--primary-color);
 }
 
 .popover a:hover {
@@ -129,6 +132,7 @@
 }
 
 /* Desktop: hover + keyboard focus */
+
 @media (hover: hover) and (pointer: fine) {
   .menu_item:hover .popover,
   .menu_item:focus-within .popover {
@@ -138,12 +142,25 @@
   }
 }
 
-@media (max-width: 740px) {
+@media (max-width: 825px) {
 
     .navbar {
         /* border: 2px solid red; */
         flex-direction: row;
     }
+
+    .brand_title {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        background-color: var(--primary-color);
+    }
+
+    .brand_title img {
+        display: block;
+        width: 200px;
+        height: auto;
+    }   
     .toggle_button {
         display: flex;
         /* border:2px solid red; */
@@ -151,9 +168,10 @@
 
     .nav_links {
         /* display: none; */
+        /* border: 2px solid red; */
         position: absolute;
-        height: calc(100vh - 130px);
-        top: 130px;
+        height: calc(100vh - 120px);
+        top: 110px;
         left: 0;
         width: 100%;
         background-color: var(--secondary-color);
@@ -194,12 +212,18 @@
         position: static;
         box-shadow: none;
         border: none;
-        padding: 6px 0 0 18px;
+        /* padding: 6px 0 0 18px; */
         opacity: 1;
         transform: none;
         pointer-events: auto;
-
         display: none;
+
+  }
+
+  .popover a {
+    /* border: 2px solid red; */
+    font-size: var(--paragraph-3);
+    text-align: center;
   }
 
   .subopen .popover {

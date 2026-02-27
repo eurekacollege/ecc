@@ -1,28 +1,3 @@
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-} */
-
-/* body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
 
 :root {
   --primary-color: #247F23;
@@ -30,6 +5,15 @@ body {
   --hover-color: #272832;
   --accent-color: #0071ff;
   --text-color: #c9c9c9;
+  --heading-1: 56px;
+  --heading-2: 40px;
+  --heading-3: 26px;
+  --heading-4: 24px;
+  --heading-5: 22px;
+  --heading-6: 18px;
+  --paragraph-1: 22px;
+  --paragraph-2: 18px;
+  --paragraph-3: 16px;
 }
 
 body {
