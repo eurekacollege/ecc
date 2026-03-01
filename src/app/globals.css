@@ -16,6 +16,10 @@
   --paragraph-3: 16px;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   min-height: 100vh;
   min-height: 100dvh;

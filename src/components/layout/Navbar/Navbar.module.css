@@ -1,5 +1,9 @@
 .navbar {
     position: sticky;
+    top: 0;
+    left: 0;
+    right:0;
+    z-index: 9999;
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
@@ -9,6 +13,7 @@
     width: 100%;
     /* padding: 0; */
     gap: clamp(16px, 4vw, 48px);
+    isolation: isolate;
 }
 
 .brand_title {
@@ -28,10 +33,12 @@
 }
 
 
+
 .nav_links ul {
     margin: 0;
     padding: 0;
     display: flex;
+
 }
 
 .nav_links li {
@@ -147,6 +154,7 @@
     .navbar {
         /* border: 2px solid red; */
         flex-direction: row;
+        /* position: inherit; */
     }
 
     .brand_title {
@@ -169,8 +177,9 @@
     .nav_links {
         /* display: none; */
         /* border: 2px solid red; */
+        padding-top: 80px;
         position: absolute;
-        height: calc(100vh - 120px);
+        height: calc(100vh);
         top: 110px;
         left: 0;
         width: 100%;
