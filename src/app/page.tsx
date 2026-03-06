@@ -5,8 +5,11 @@ import Hero from "@/components/Hero";
 export default function Home() {
   return (
     <>
+      {/* HERO */}
       <Hero/>
 
+
+      {/* WELCOME SECTION */}
       <section className={styles.welcome_section}>
         {/* Left side */}
         <div className={styles.welcome_left}>
@@ -59,6 +62,19 @@ export default function Home() {
               rel="0" src="https://www.youtube.com/embed/uyUQppe2hL8?rel=0&modestbranding=1&playsinline=1" title="Eureka College of Canada" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen>
               </iframe>
             </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* PROGRAM SECTION */}
+      <section className={styles.program_section}>
+        <div className={styles.program_card}>
+          <Image src="/images/home_communitysupportworker.jpeg" alt="community support worker image" width={300} height={250}/>
+          <div className={styles.program_card_details}>
+            <h4>Medical Office Administrator</h4>
+            <p>Community Support Worker are in high demand; in only six months you could be earning up to $25 per hour! Monthly intakes, online courses, and a variety of schedule options to choose from.</p>
+            <a href="">Learn More &gt;</a>
           </div>
         </div>
       </section>
