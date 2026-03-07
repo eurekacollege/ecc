@@ -41,7 +41,7 @@
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 440px) {
   .program_card_details > h4 {
     font-size: var(--heading-m-3);
   }
