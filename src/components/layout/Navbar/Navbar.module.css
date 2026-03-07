@@ -63,18 +63,18 @@
 
 .toggle_button {
     position: absolute;
-    top: 2.5rem;
-    right: 2.5rem;
+    top: 3rem;
+    right: 2rem;
     display: none;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     width: 40px;
     height: 40px;
 }
 
 .toggle_button .bar {
-    height: 4px;
-    width: 100%;
+    height: 3px;
+    width: 80%;
     background-color: var(--primary-color);
     border-radius: 10px;
     transition: all 0.3s ease;
@@ -83,7 +83,7 @@
 
 .open .bar:nth-child(1) {
   /* transform: rotate(45deg) translate(5px, 5px); */
-  transform: translateY(18px) rotate(45deg);
+  transform: translateY(10px) rotate(45deg);
 }
 
 .open .bar:nth-child(2) {
@@ -92,7 +92,7 @@
 
 .open .bar:nth-child(3) {
   /* transform: rotate(-45deg) translate(6px, -6px); */
-  transform: translateY(-15px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 
@@ -172,6 +172,7 @@
     .toggle_button {
         display: flex;
         /* border:2px solid red; */
+        gap: 6px;
     }
 
     .nav_links {

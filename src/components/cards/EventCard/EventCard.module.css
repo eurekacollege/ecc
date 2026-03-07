@@ -1,0 +1,35 @@
+.event_card{
+  /* border: 2px solid blue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 calc((100% - 40px) / 3);
+  height: auto;
+}
+
+.event_card > img {
+  width:100%;
+  height: 250px;
+  
+}
+
+.event_card_details > h4 {
+  font-size: var(--heading-5);
+}
+
+.event_card_details > p {
+  font-size: var(--paragraph-3);
+}
+
+
+@media (max-width: 825px) {
+  .event_card {
+    flex: 0 0 calc((100% - 20px) / 2)
+  }
+}
+
+@media (max-width: 600px) {
+  .event_card {
+    flex: 0 0 100%;
+  }
+}

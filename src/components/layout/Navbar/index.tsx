@@ -38,24 +38,26 @@
 // }
 
 "use client";
-import { useState } from "react";
+import { useState, type MouseEvent } from "react";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
 
+type SubMenuKey = "about" | "programs" | "policies" | "contact" | null;
+
 export default function Navbar() {
-  const [active, setActive] = useState(false);
-  const [openSub, setOpenSub] = useState(null); // "about" | "programs" | "policies" | "contact" | null
+  const [active, setActive] = useState<boolean>(false);
+  const [openSub, setOpenSub] = useState<SubMenuKey>(null); // "about" | "programs" | "policies" | "contact" | null
 
   const isMobile = () =>
     typeof window !== "undefined" &&
     window.matchMedia("(hover: none), (pointer: coarse)").matches;
 
-  function openHamburger(e) {
+  const openHamburger = (e: MouseEvent<HTMLAnchorElement>): void => {
     e.preventDefault();
     setActive((prev) => !prev);
   }
 
-  function onParentClick(e, key) {
+  function onParentClick(e: MouseEvent<HTMLAnchorElement>, key:SubMenuKey) {
     // Mobile: first tap opens submenu, second tap follows the link
     if (isMobile()) {
       if (openSub !== key) {

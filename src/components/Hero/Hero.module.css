@@ -22,7 +22,7 @@
 
 .content {
     width: min(900px, 92%);
-    padding-bottom: 250px;
+    padding-bottom: 30px;
     /* border: 2px solid red; */
 }
 
@@ -82,21 +82,22 @@
   }
   
   .content {
-    padding-bottom: 50px;
+    /* border: 2px solid red; */
+    padding-top: 250px;
   }
 
     .content h1 {
-        font-size: var(--heading-3);
+        font-size: var(--heading-6);
         line-height: 1.5;
     }
 
     .content p {
-        font-size: var(--heading-5);
+        font-size: var(--heading-6);
     }
 }
 
 @media (max-width: 450px) {
     .hero {
-        height: 65vh;
+        height: 72vh;
     }
 }

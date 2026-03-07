@@ -1,6 +1,12 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import Hero from "@/components/Hero";
+import Hero from "@/components/hero";
+import ProgramCard from "@/components/cards/ProgramCard";
+import EventCard from "@/components/cards/EventCard";
+import { Programs } from "@/data/programs";
+import { Events } from "@/data/events";
+
+
 
 export default function Home() {
   return (
@@ -21,18 +27,22 @@ export default function Home() {
           </div>
             <div className={styles.welcome_lower_left}>
               <div className={styles.side_bar}>
-                <Image src="/images/academic.svg" alt="academic programs" width={100} height={80}/>
-                <span>Academic Programs</span>
+                {/* <Image src="/images/academic.svg" alt="academic programs" width={100} height={80}/> */}
+                <span>Academic</span>
+                <span>Programs</span>
+
               </div>
               <hr></hr>
               <div className={styles.side_bar}>
-                <Image src="/images/policies.svg" alt="policies" width={100} height={80}/>
-                <span>Student Policies</span>
+                {/* <Image src="/images/policies.svg" alt="policies" width={100} height={80}/> */}
+                <span>Student</span>
+                <span>Policies</span>
               </div>
               <hr></hr>
               <div className={styles.side_bar}>
-                <Image src="/images/apply_now.svg" alt="apply now" width={100} height={80}/>
-                <span>Enrol Now</span>
+                {/* <Image src="/images/apply_now.svg" alt="apply now" width={100} height={80}/> */}
+                <span>Enrol</span>
+                <span>Now</span>
               </div>
             </div>
         </div>
@@ -41,20 +51,23 @@ export default function Home() {
         <div className={styles.welcome_right}>
           <div className={styles.welcome_upper_right}>
             <h2>
-              Welcome to
+              Welcome to Eureka College of Canada.
             </h2>
-            <h2>Eureka College of Canada. </h2>
             <h2>The moment when it all clicks.</h2>
           </div>
 
           <div className={styles.welcome_lower_right}>
             <div className={styles.welcome_lower_right_leftside}>
-              <h2>Start a Career That Makes a Difference</h2>
-              <ul>
-                <li>Small class sizes</li>
-                <li>Industry-experienced instructors</li>
-                <li>Support from enrollment to graduation</li>
-              </ul>
+              <div className={styles.title_container}>
+                <h2>Start a Career That</h2>
+                <h2>Makes a Difference</h2>
+                <ul>
+                  <li>Small class sizes to ensure individualized academic support</li>
+                  <li>Highly qualified instructors with extensive industry experience</li>
+                  <li>Comprehensive, hands-on practical training</li>
+                  <li>Dedicated student support services from admission through graduation</li>
+                </ul>
+              </div>
             </div>
             <div className={styles.welcome_lower_right_rightside}>
               {/* video */}
@@ -66,16 +79,44 @@ export default function Home() {
         </div>
       </section>
 
+      <br></br>
 
       {/* PROGRAM SECTION */}
       <section className={styles.program_section}>
-        <div className={styles.program_card}>
-          <Image src="/images/home_communitysupportworker.jpeg" alt="community support worker image" width={300} height={250}/>
-          <div className={styles.program_card_details}>
-            <h4>Medical Office Administrator</h4>
-            <p>Community Support Worker are in high demand; in only six months you could be earning up to $25 per hour! Monthly intakes, online courses, and a variety of schedule options to choose from.</p>
-            <a href="">Learn More &gt;</a>
-          </div>
+        <h2>Programs</h2>
+        <div className={styles.program_card_container}>
+         {
+          Programs.map((program, index) => (
+            <ProgramCard
+            key={program.title + index}
+            image={program.image}
+            alt={program.alt}
+            title={program.title}
+            description={program.description}
+            link={program.link}
+            />
+          ))
+         }
+        </div>
+      </section>
+
+      <br></br>
+
+      {/* News & Events SECTION */}
+      <section className={styles.program_section}>
+        <h2>News & Events</h2>
+        <div className={styles.program_card_container}>
+         {
+          Events.map((event, index) => (
+            <EventCard
+            key={event.title + index}
+            image={event.image}
+            title={event.title}
+            description={event.description}
+            />
+          ))
+         }
+
         </div>
       </section>
     </>
