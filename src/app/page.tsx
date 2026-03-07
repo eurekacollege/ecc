@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import Hero from "@/components/hero";
+import Hero from "@/components/Hero";
 import ProgramCard from "@/components/cards/ProgramCard";
 import EventCard from "@/components/cards/EventCard";
 import { Programs } from "@/data/programs";
