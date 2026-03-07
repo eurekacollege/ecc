@@ -75,7 +75,7 @@
 .toggle_button .bar {
     height: 3px;
     width: 80%;
-    background-color: var(--primary-color);
+    background-color: white;
     border-radius: 10px;
     transition: all 0.3s ease;
 }
@@ -155,6 +155,7 @@
         /* border: 2px solid red; */
         flex-direction: row;
         /* position: inherit; */
+        background-color: var(--primary-color);
     }
 
     .brand_title {

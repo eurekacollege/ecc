@@ -14,6 +14,7 @@
 
 .program_card_details > h4 {
   font-size: var(--heading-5);
+  color: var(--primary-color);
 }
 
 .program_card_details > p {
@@ -37,5 +38,15 @@
 @media (max-width: 600px) {
   .program_card {
     flex: 0 0 100%;
+  }
+}
+
+@media (max-width: 390px) {
+  .program_card_details > h4 {
+    font-size: var(--heading-m-3);
+  }
+
+  .program_card_details > p, .program_card_details > a{
+    font-size: var(--paragraph-m-1);
   }
 }

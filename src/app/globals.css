@@ -14,6 +14,11 @@
   --paragraph-1: 22px;
   --paragraph-2: 18px;
   --paragraph-3: 16px;
+
+  --heading-m-1: 21px;
+  --heading-m-2: 20px;
+  --heading-m-3: 16px;
+  --paragraph-m-1:14px;
 }
 
 html, body {

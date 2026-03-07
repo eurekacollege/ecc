@@ -87,12 +87,13 @@
   }
 
     .content h1 {
-        font-size: var(--heading-6);
+        font-size: var(--heading-m-1);
         line-height: 1.5;
+        margin: 5px 0;
     }
 
     .content p {
-        font-size: var(--heading-6);
+        font-size: var(--heading-m-3);
     }
 }
 

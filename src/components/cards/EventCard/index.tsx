@@ -11,7 +11,7 @@ export default function ProgramCard({ image, title, description}: EventCardProps
     return (
         <>
         <div className={styles.event_card}>
-            <Image src={image} alt={title} width={300} height={250}/>
+            <Image src={image} alt={title} width={600} height={600}/>
             <div className={styles.event_card_details}>
               <h4>{title}</h4>
               <p>{description}</p>

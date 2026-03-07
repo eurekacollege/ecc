@@ -15,6 +15,7 @@
 
 .event_card_details > h4 {
   font-size: var(--heading-5);
+  color: var(--primary-color);
 }
 
 .event_card_details > p {
@@ -31,5 +32,15 @@
 @media (max-width: 600px) {
   .event_card {
     flex: 0 0 100%;
+  }
+}
+
+@media (max-width: 390px) {
+  .event_card_details > h4 {
+    font-size: var(--heading-m-3);
+  }
+
+  .event_card_details > p, .event_card_details > a{
+    font-size: var(--paragraph-m-1);
   }
 }

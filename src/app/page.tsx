@@ -41,8 +41,7 @@ export default function Home() {
               <hr></hr>
               <div className={styles.side_bar}>
                 {/* <Image src="/images/apply_now.svg" alt="apply now" width={100} height={80}/> */}
-                <span>Enrol</span>
-                <span>Now</span>
+                <span>Apply Now</span>
               </div>
             </div>
         </div>
@@ -103,9 +102,9 @@ export default function Home() {
       <br></br>
 
       {/* News & Events SECTION */}
-      <section className={styles.program_section}>
+      <section className={styles.event_section}>
         <h2>News & Events</h2>
-        <div className={styles.program_card_container}>
+        <div className={styles.event_card_container}>
          {
           Events.map((event, index) => (
             <EventCard
